@@ -4,6 +4,13 @@ Discord Rich Presence for MuseScore
 ## Usage Instrctions
 \* Adding support for Mac should be really easy, but I don't own a Mac to test it on.
 
+### MuseScore 4
+1. Install the CurrentScoreInfo-MS3.qml Plugin Into MuseScore (Compatible with MuseScore4)
+2. Open MuseScore and ensure to **run it as an administrator**!
+3. When inside MuseScore, enable the plugin. Then go into the plugin tab and run it.
+4. Clone this repository and install node modules (`npm i`)
+5. Run rpc.js (`node src/rpc.js`)
+
 ### MuseScore 3
 1. Install the CurrentScoreInfo-MS3.qml Plugin Into MuseScore
 2. Open MuseScore and ensure to **run it as an administrator**!
