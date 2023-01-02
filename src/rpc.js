@@ -12,10 +12,10 @@ let stateindex = 0;
 let sheetcache = null;
 
 async function update() {
-    const apps = await fp("name", "MuseScore");
+    const apps = await fp("name", "MuseScore 4");
     let app;
     for (let i = 0; i < apps.length; i++) {
-        if (["MuseScore.exe", "MuseScore2.exe", "MuseScore3.exe"].includes(apps[i].name)) {
+        if (["MuseScore.exe", "MuseScore2.exe", "MuseScore3.exe", "MuseScore4.exe"].includes(apps[i].name)) {
             app = apps[i];
             break;
         }
@@ -72,19 +72,18 @@ async function update() {
             details: `Editing ${window.sheet.scoreName}`,
             state: states[stateindex],
             startTimestamp: start,
-            largeImageKey: "musescore3-square",
-            smallImageKey: "musescore3-circle",
+            largeImageKey: "musescore4-square",
+            smallImageKey: "musescore4-circle",
             largeImageText: window.sheet.mscoreVersion ? `MuseScore ${window.sheet.mscoreVersion}` : "MuseScore",
             smallImageText: `Contains ${window.sheet.nmeasures} Measures`
         });
     } else {
         client.setActivity({
-            details: "Musescore",
-            state: "Unknown",
+            details: "Working on a score",
             startTimestamp: start,
-            largeImageKey: "musescore3-square",
-            smallImageKey: "musescore3-circle",
-            largeImageText: "MuseScore 3",
+            largeImageKey: "musescore4-square",
+            smallImageKey: "musescore4-circle",
+            largeImageText: "MuseScore 4",
             smallImageText: "Composing"
         });
     }
@@ -101,6 +100,6 @@ client.on("ready", () => {
 });
 
 console.log("Connecting...");
-client.login({ clientId: "577645453429047314" });
+client.login({ clientId: "1059530507299328100" });
 
 process.on("unhandledRejection", console.error);
